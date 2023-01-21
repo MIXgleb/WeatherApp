@@ -1,7 +1,6 @@
 from requests import get as reqget
 from django.shortcuts import render
 from .models import City
-from django.http import QueryDict
 # from .forms import CityForm
 
 
@@ -170,4 +169,4 @@ def start_page(request):
                'default_mode_button': check_default_mode(),
                'empty_input_error': empty_input_error}
 
-    return render(request, 'weather/weather.html', context)
+    return render(request, 'main_page/buttons.html', context)
