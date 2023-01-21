@@ -1,0 +1,65 @@
+{% extends "weather/base.html" %}
+
+
+{% block weather %}
+    {% for info in all_info %}
+        <div class="alert alert-info">
+            <div class="row">
+                <div class="col-9">
+                    <b>Город:</b> {{info.city}}<br>
+                    {% if info.temp is None %}
+                        <b>Температура:</b> Нет данных
+                    {% else %}
+                        <b>Температура:</b> {{info.temp}}&deg; <!-- <sup>o</sup> -->
+                    {% endif %}
+                </div>
+                <div class="col-2 offset-1">
+                    <img src="http://openweathermap.org/img/w/{{info.icon}}.png"
+                         alt="Фото погоды">
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+{% block input_city %}
+    <form action="/" method="post">
+        {% csrf_token %}
+        <label for="">Город</label>
+        <input type="text" class="form-control" name="input_city"
+               placeholder='Введите город'">
+        <button name="add_city_button" class="mt-3 btn btn-primary">Узнать</button>
+        <label class="mt-3 btn" style="color: red;
+               font-size: large; font-weight: 500" {{ empty_input_error }}>
+            Введите город!</label>
+    </form>
+
+<!--    <form action="/" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <label for="add_city">Город</label>-->
+<!--        {{ form.name }}-->
+<!--        <input type="submit" name="add_city" value="Узнать" class="mt-2 btn btn-primary">-->
+<!--    </form><br><br>-->
+
+{% endblock %}
+
+
+{% block setting_buttons %}
+    <form action="/" method="post">
+        {% csrf_token %}
+        <button name="single_mode" class='{{ single_mode_button.class }}'>{{ single_mode_button.mode }}</button>
+        <label for="single_mode"><h6>{{ single_mode_button.message }}</h6></label>
+        <br><br>
+        <button name="default_mode" class='{{ default_mode_button.class }}'>{{ default_mode_button.mode }}</button>
+        <label for="default_mode"><h6>{{ default_mode_button.message }}</h6></label>
+    </form>
+{% endblock %}
+
+
+{% block clear_button %}
+    <form action="/" method="post">
+        {% csrf_token %}
+        <button name="clear_all" class="btn btn-danger">Очистить</button>
+    </form>
+{% endblock %}

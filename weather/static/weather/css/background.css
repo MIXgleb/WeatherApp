@@ -1,0 +1,7 @@
+.main_page {
+  /*background-image: url("https://bigfoto.name/uploads/posts/2022-03/1647282304_7-bigfoto-name-p-goluboi-fon-s-oblakami-detskie-9.jpg");*/
+  background-image: url("../image/clouds_2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
