@@ -14,16 +14,16 @@ A ***Jinja2*** is required to connect the backend and frontend.
 The site header with pointers ***"Главная"***, ***"Информация"***, ***"Документация"*** is made only for beauty. 
 Interaction with them does not break the site, but it does not transfer the user anywhere, just leaving him on the main page.
 
-### Input line *(Погода в вашем городе)*
+### Input line *("Погода в вашем городе")*
 The input line accepts the name of the city where the user wants to know the weather. The input is not case and language sensitive.
 
 If the input line is empty and the user is trying to find out the weather, then the process will not start and a red inscription ***"Введите город"***
 will be displayed that the city must first be entered.
 
-### Start button *(Узнать)*
+### Start button *("Узнать")*
 This button starts the process of searching and displaying the weather. Also, this process starts with the enter keyboard button.
 
-### Output list *(Информация)*
+### Output list *("Информация")*
 This list displays information about the weather in the city: temperature and cloudiness.
 Regardless of the input language and case, the output of the city will be in Russian and with a capital letter.
 
@@ -33,10 +33,10 @@ so there will be no copy of the city.
 
 If the entered city does not exist, then a row with information about the error is displayed.
 
-### Clear button *(Очистить)*
+### Clear button *("Очистить")*
 This button clears the list of output cities.
 
-### Settings *(Настройки)*
+### Settings *("Настройки")*
 + **Single city button** - activates the **single mode**. When entering a new city, the old one is deleted and a new one is added:
 > 1. If there are cities in the list, displays the last city from the list.
 + **Default city button** - activates the **default mode**. At the moment, the default city is Bishkek:
