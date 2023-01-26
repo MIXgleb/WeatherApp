@@ -37,13 +37,18 @@ If the entered city does not exist, then a row with information about the error 
 This button clears the list of output cities.
 
 ### Settings *(Настройки)*
-+ **Single city button** - activates the **single city mode**. When entering a new city, the old one is deleted and a new one is added;
++ **Single city button** - activates the **single mode**. When entering a new city, the old one is deleted and a new one is added:
 > 1. If there are cities in the list, displays the last city from the list.
-+ **Default city button** - activates the **default city mode**. At the moment, the default city is Bishkek.
++ **Default city button** - activates the **default mode**. At the moment, the default city is Bishkek:
 > 1. If the output list is empty, then the default city weather information will be added;
 > 2. If there are cities in the list, but there is no default city, then it will be added to the **top** of the list;
 > 3. If there is already a default city in the list, then its weather information will be updated and it will **move to the top** of the list;
 > 4. When clearing the list, all cities will be deleted **except** for the default city;
-> 5. When you turn the mod on and off, the default city is not deleted;
-> 6. When you turn on the mod of one city, it will no longer be the last city in the list, but the default city;
-> 7. Does not interfere with the work of the single city mode city.
+> 5. When you turn the mod on and off, the default city is not deleted.
++ **Single & default** - how mods work depending on the state of another mod:
+> 1. Default mode does not interfere with the work of the single mode;
+> 2. If default mod is on:
+>> + When you turn on a single mod, the list will not contain the last city, but the default city;
+>> + If the single mod is on and the list contains a city another than the default one, then after disabling the single mod, the default city will appear in the top of the list.
+> 3. If single mod is on:
+>> + When you torn on default mod, the city in the list changes to the default city.
