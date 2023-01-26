@@ -61,7 +61,7 @@ This button clears the list of output cities.
 1. There is no possibility to change the default city;
 
 2. Bug on page refresh.
-> + If the last interaction was with the settings buttons, then when the page is refreshed, the last pressed settings button will change its status to the opposite.
-> + If the last interaction was on an input line with a city added, then when the page is refreshed, the last added city will be added to the list again, despite the sorting function.
++ If the last interaction was with the settings buttons, then when the page is refreshed, the last pressed settings button will change its status to the opposite.
++ If the last interaction was on an input line with a city added, then when the page is refreshed, the last added city will be added to the list again, despite the sorting function.
 
-> This bug is related to the fact that request.POST does not clear the status after the command is executed and the page is refreshed. And it turns out that when the page is refreshed, the last command is forcibly executed again, bypassing the main debugging and sorting functions.
+This bug is related to the fact that request.POST does not clear the status after the command is executed and the page is refreshed. And it turns out that when the page is refreshed, the last command is forcibly executed again, bypassing the main debugging and sorting functions.
