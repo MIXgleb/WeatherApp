@@ -6,6 +6,10 @@
 # WeatherApp
 This project gives information about the current weather in any city entered in the input line.
 
+## Backend
+The basic data for displaying the main page is processed as usual in a **"views.py"**. The entire internal part of the responses and button interactions, receiving and processing weather information and working with the database is in the backend directory.
+
+## Site principles
 ### Requirements.txt
 ***Django*** framework is used as the backbone of the project. For API request ***requests*** module is used. To encrypt the token ***python-decouple*** is used.
 A ***Jinja2*** is required to connect the backend and frontend.
@@ -39,7 +43,7 @@ This button clears the list of output cities.
 ### Settings *("Настройки")*
 + **Single city button** - activates the **single mode**. When entering a new city, the old one is deleted and a new one is added:
 > 1. If there are cities in the list, displays the last city from the list.
-+ **Default city button** - activates the **default mode**. At the moment, the default city is Bishkek:
++ **Default city button** - activates the **default mode**. At the moment, the default city is **"Москва"**:
 > 1. If the output list is empty, then the default city weather information will be added;
 > 2. If there are cities in the list, but there is no default city, then it will be added to the **top** of the list;
 > 3. If there is already a default city in the list, then its weather information will be updated and it will **move to the top** of the list;
@@ -52,3 +56,12 @@ This button clears the list of output cities.
 >> + If the single mod is on and the list contains a city another than the default one, then after disabling the single mod, the default city will appear in the top of the list.
 > 3. If single mod is on:
 >> + When you torn on default mod, the city in the list changes to the default city.
+
+## Сurrent disadvantages
+1. There is no possibility to change the default city;
+
+2. Bug on page refresh.
++ If the last interaction was with the settings buttons, then when the page is refreshed, the last pressed settings button will change its status to the opposite.
++ If the last interaction was on an input line with a city added, then when the page is refreshed, the last added city will be added to the list again, despite the sorting function.
+
+This bug is related to the fact that request.POST does not clear the status after the command is executed and the page is refreshed. And it turns out that when the page is refreshed, the last command is forcibly executed again, bypassing the main debugging and sorting functions.
