@@ -3,7 +3,7 @@ from .add_city import InputCity
 
 class DefaultMode:
     check = False
-    default_city = 'Бишкек'
+    default_city = 'Москва'
 
     @staticmethod
     def switch(cities, single_mode_check):
